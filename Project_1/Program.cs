@@ -20,12 +20,24 @@ int GetNumber(string message)
 }
 void Palindrom(int number)
 {
-int leftPart = number/ 1000;
+int leftPart = number / 1000;
 int rightPart = number % 100;
-int reverseRightPart = ((rightPart%10)*10) + (rightPart/10);
-if(leftPart == reverseRightPart) Console.WriteLine($"Число {number} является палиндромом");
-else Console.WriteLine($"Число {number} НЕ является палиндромом");
+int reverseRightPart = ((rightPart % 10) * 10) + (rightPart / 10);
+if(leftPart == reverseRightPart) 
+    Console.WriteLine($"Число {number} является палиндромом");
+else 
+    Console.WriteLine($"Число {number} НЕ является палиндромом");
+}
+
+void PalindromStr(int number)
+{
+    string strNumber = Convert.ToString(number);
+    if(strNumber[0] == strNumber[4] && strNumber[1] == strNumber[3])
+        Console.WriteLine($"Число {number} является палиндромом");
+    else
+        Console.WriteLine($"Число {number} НЕ является палиндромом");
 }
 
 int number = GetNumber("Введите пятизначное число:");
 Palindrom(number);
+PalindromStr(number);
